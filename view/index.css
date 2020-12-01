@@ -1,5 +1,5 @@
 body {
-    background-color: #b4def2;
+    background-color:rgb(224, 218, 218);
 }
 h1 {
     text-align: center;
@@ -13,14 +13,16 @@ h2 {
     color: #dfbbf5;
     font-size: large;
     text-align: center;
+    font-size: 150%;
     letter-spacing: 2px;
 }
 .login-div{
-    border: 3px solid wheat;
+    border: 3px solid #f8f680;
     border-radius: 75px;
     padding: 20px;
-    width: 400px;
+    width: 350px;
     margin:0 auto;
+    background-color: #2eb9fab9;
 
 }
 .logo{
