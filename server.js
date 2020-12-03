@@ -9,19 +9,19 @@ const path = require('path');
 http.createServer(function(req, res){
 
     if(req.url === "/"){ //min login-side er forsiden på min server
-        fs.readFile("./public/login.html", "UTF-8", function(err, html){
+        fs.readFile("./public/view/login.html", "UTF-8", function(err, html){
             res.writeHead(200, {"Content-Type": "text/html"}); //typen er tekst og HTML, da det er en html-fil jeg "læser"
             res.end(html);
         });
 
       }else if(req.url === "/register"){ //opretter en side for min register-page
-        fs.readFile("./public/register.html", "UTF-8", function(err, html){
+        fs.readFile("./public/view/register.html", "UTF-8", function(err, html){
             res.writeHead(200, {"Content-Type": "text/html"});
             res.end(html);
         });
 
       }else if (req.url === "/profile"){ //opretter en side for min register-page
-          fs.readFile("./public/profile.html", "UTF-8", function(err, html){
+          fs.readFile("./public/view/profile.html", "UTF-8", function(err, html){
               res.writeHead(200, {"Content-Type": "text/html"});
               res.end(html);
           });
