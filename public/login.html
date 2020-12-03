@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Login to match</title>
+            <link rel="stylesheet" type="text/css" href="css/index.css"> 
+            <meta charset="utf-8">
+            <script src="/controller/loginStorage.js" type="text/javascript" defer></script>
+        </head>
+        <body>
+            <div>
+                <img class="logo" src="logo.jpeg">
+            </div>
+            <div class="user-div">
+            <form > <!--evt indsæt: onsubmit = "window.location.href='profile'"-->
+                <h2>Login</h2>
+                <div class="username">
+                    <label for="username">Username:</label>
+                    <input id="username" type="text" required>
+                    <br>
+                    <br>
+                    <label for="password">Password:</label>
+                    <input id="password" type="password" required> 
+                </div>
+                <br>
+                <div>
+                        <input id="submitUser" type="submit" value="Login">
+                </div>
+            </form>
+                <br>
+            <!--<form>
+                <div class="password">
+                    <label for="password">Password:</label>
+                    <input id="password" type="password" required>
+                    <input id="submitPassword" type="submit" value="submit">
+                </div>
+            </form>-->
+            <!-- Login knappen skal kunne lede videre til den personlige profil - det gøres ved at bruge href heri. 
+                href skal så lede til den html fil/http side som jeg laver til brugerens personlige profil -->
+                <a href="register">Don't have an account yet? Register here!</a>
+            </div>        
+            
+            
+
+        </body>
+
+</html>

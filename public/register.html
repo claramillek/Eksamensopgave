@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Sign up to match</title>
+            <link rel="stylesheet" type="text/css" href="css/index.css"> 
+            <meta charset="utf-8">
+            <script src="/controller/registerStorage.js" type= "text/javascript" defer></script>
+        </head>
+        <body>
+            <div>
+                <img class="logo" src="logo.jpeg">
+            </div>
+            <div class="user-div">
+                <h2>Sign up</h1>
+                <div>
+                    <form>
+                        <!--Brugeren skal skrive sit fornavn-->
+                        <label for="firstname">Firstname:</label>
+                        <input id="firstname" type="text" required> <!--type = text, i feltet kan man skrive tekst-->
+                        <br><br>
+                        <!--Brugeren skal skrive sit efternavn-->
+                        <label for="lastname">Lastname:</label>
+                        <input id="lastname" type="text" required>
+                        <br><br>
+                        <!--Brugeren skal skrive sin mail-->
+                        <label for="email">E-mail:</label>
+                        <input id="email" type="email" required>  <!--ved at give inputtet typen email kan browseren arbejde
+                            med, at den ved at formattet et e-mail-->
+                        <br><br>
+                        <!--Vælg er brugernavn-->
+                        <label for="username">Username:</label>
+                        <input id="username" type="text" required>
+                        <br><br>
+                        <!--Lav et password-->
+                        <label for="password">Password:</label>
+                        <input id="password" type="password" required> <!--når type sættes til password ved browseren, at
+                        den skal skjule det man indtaster-->
+                        <br><br>
+                        <!--Indtastning af fødseldag-->
+                        <label for="birthday">Enter your birthday:</label>
+                        <input type="date" id="birthday">
+                        <br><br>
+                        <!--valg af køn-->
+                        <p>Select gender:</p> <!--vi laver det som et p-tag fordi det er gældende for hele formen
+                    og ikke skal kodes sammen med én specifik del i formen-->
+                        <form action=""> <!--radio typen medfører, at cirklerne er den måde 
+                        hvorpå man svare på denne del af formen. udover det, så gør 'name' at man kun
+                        kan vælge én af de tre valgmuligheder. hvis man ændre 'name' for én af dem
+                        så kan man vælge to, så længe de har et forskelligt 'name'. 'name' attribut er 
+                        vigtig når vi skal gruppere flere elementer i formen sammen-->
+                            <input type="radio" name="gender" value="male"> Male 
+                            <input type="radio" name="gender" value="female"> Female
+                            <input type="radio" name="gender" value="other"> Other
+                        <br><br>
+                        <!--Her kan brugeren vælge hvilket køn han/hun/den gerne vil se inde på appen-->
+                        <label for="">Interest: </label> <br>
+                        <select name="interest" id="interest" required>
+                                <option value="blank">  </option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="other">Other</option>
+                        </select>
+                        <br><br>
+                    <input id="submitUser" type="submit" value="Create user" onsubmit = "window.location.href='profile'">
+                </div>
+        </form>
+                <br>
+            <!--<form>
+                <div class="password">
+                    <label for="password">Password:</label>
+                    <input id="password" type="password" required>
+                    <input id="submitPassword" type="submit" value="submit">
+                </div>
+            </form>-->
+            <!-- Login knappen skal kunne lede videre til den personlige profil - det gøres ved at bruge href heri. 
+                href skal så lede til den html fil/http side som jeg laver til brugerens personlige profil -->
+                <a href="/">Already have an account? Login here!</a>
+            </div>        
+            
+            
+
+        </body>
+</html>
