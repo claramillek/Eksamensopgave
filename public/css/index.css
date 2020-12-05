@@ -42,3 +42,36 @@ h3 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+#login-error-msg-holder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+  
+#login-error-msg {
+    width: 23%;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #d60000;
+    opacity: 0;
+}
+  
+#error-msg{
+    display: block;
+
+}
+
+#updateProfile{
+    border: 3px solid #f8f680;
+    border-radius: 75px;
+    padding: 40px;
+    width: 300px;
+    margin:0 auto;
+    background-color: #2eb9fab9;
+    float: right;
+}

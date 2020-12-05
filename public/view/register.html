@@ -38,42 +38,20 @@
                         <br><br>
                         <!--Indtastning af fødseldag-->
                         <label for="birthday">Enter your birthday:</label>
-                        <input type="date" id="birthday">
+                        <input id="birthday" type="date">
                         <br><br>
                         <!--valg af køn-->
-                        <p>Select gender:</p> <!--vi laver det som et p-tag fordi det er gældende for hele formen
-                    og ikke skal kodes sammen med én specifik del i formen-->
-                        <form action=""> <!--radio typen medfører, at cirklerne er den måde 
-                        hvorpå man svare på denne del af formen. udover det, så gør 'name' at man kun
-                        kan vælge én af de tre valgmuligheder. hvis man ændre 'name' for én af dem
-                        så kan man vælge to, så længe de har et forskelligt 'name'. 'name' attribut er 
-                        vigtig når vi skal gruppere flere elementer i formen sammen-->
-                            <input type="radio" name="gender" value="male"> Male 
-                            <input type="radio" name="gender" value="female"> Female
-                            <input type="radio" name="gender" value="other"> Other
+                        <label for="gender">Gender:</label>
+                        <input id="gender" type="text" placeholder="female, male, other..." required>
                         <br><br>
                         <!--Her kan brugeren vælge hvilket køn han/hun/den gerne vil se inde på appen-->
-                        <label for="">Interest: </label> <br>
-                        <select name="interest" id="interest" required>
-                                <option value="blank">  </option>
-                                <option value="female">Female</option>
-                                <option value="male">Male</option>
-                                <option value="other">Other</option>
-                        </select>
+                        <label for="interest">Sexual orientation:</label>
+                        <input id="interest" type="text" placeholder="female, male, other..." required>
                         <br><br>
-                    <input id="submitUser" type="submit" value="Create user" onsubmit = "window.location.href='profile'">
+                    <input id="createUser" type="submit" value="Create user">
                 </div>
         </form>
                 <br>
-            <!--<form>
-                <div class="password">
-                    <label for="password">Password:</label>
-                    <input id="password" type="password" required>
-                    <input id="submitPassword" type="submit" value="submit">
-                </div>
-            </form>-->
-            <!-- Login knappen skal kunne lede videre til den personlige profil - det gøres ved at bruge href heri. 
-                href skal så lede til den html fil/http side som jeg laver til brugerens personlige profil -->
                 <a href="/">Already have an account? Login here!</a>
             </div>        
             

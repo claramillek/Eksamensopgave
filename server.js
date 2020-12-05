@@ -46,6 +46,7 @@ http.createServer(function(req, res){
         var fileStream = fs.createReadStream(scriptPath,"UTF-8");
         res.writeHead(200, {"Content-Type": "text/javascript"});
         fileStream.pipe(res);
+   } else if {
 
     }else{ //dette gøres for at der skrives en fejlbesked, hvis en bruger kommer ind på en side der ikke findes
     res.writeHead(404, {"Content-Type": "text/html"});
@@ -54,3 +55,5 @@ http.createServer(function(req, res){
 }) .listen(3400);
 
 
+// ved at lave et API endpoint, så kan jeg fetche JSON filen fra backend til frontend
+//frontend sender request til vores API, der sender json filen til frontend
