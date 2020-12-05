@@ -2,9 +2,10 @@
     <html>
         <head>
             <title>Welcome to your personal Match profile</title>
-            <link rel="stylesheet" type="text/css" href="css/index.css"> 
+            <link rel="stylesheet" href="./css/index.css" type="text/css"> 
             <meta charset="utf-8">
-            
+            <script src="profile.js" defer></script>
+            <script src="../controller/profileStorage.js" defer></script>
         </head>
         <body>
             <div>
@@ -12,16 +13,16 @@
             </div>
             <h3>Welcome</h3>
             <form id="user" class="user">
-                <input id="logout" type="submit" onsubmit="logout()" value="Logout"> 
-                <input id="deleteUser" type="submit" onsubmit="deleteUser()" value="Delete user"> 
+                <input id="logoutbtn" type="submit" onsubmit="logout()" value="Logout"> 
+                <input id="deleteUserbtn" type="submit" onsubmit="deleteUser()" value="Delete user"> 
             </form>
         </div>
         <p>All your matches:</p>
         <div>
             <form id="matches">
-                <table id="potentialMatch"></table>
-                <input id="likebtn" type="submit" onsubmit="Like()" value="Like user"> 
-                <input id="dislikebtn" type="submit" onsubmit="Dislike()" value="Dislike"> 
+                <table id="matches"></table>
+                <input id="removeMatchbtn" type="submit" onsubmit="remove()" value="Remove Match"> 
+
               </form>
          </div>
          <div class="container">
@@ -70,9 +71,7 @@
                     <label for="female">All</label>
     
                     <br><br>
-        
-                    <button id="update-btn" onclick=updateUser() type="button" class="profile-btn" >Update your match profile</button>
-    
+                    <input id="updateUser" type="submit" value="Update your match profile">    
             </form>
     
         </div>
@@ -82,13 +81,13 @@
             
           <form class="form2" id="otheruser">
             <table id="potentialMatch"></table>
-            <button id="regButton" onclick=Like() type="button">Like</button>
-            <button id="regButton" onclick=Dislike() type="button">Dislike</button>
+            <button id="likeOtherUserbtn" onclick=Like() type="button">Like</button>
+            <button id="dislikeOtherUserbtn" onclick=Dislike() type="button">Dislike</button>
           </form>
           
         </div>
         </body>
-    <script src="/model/profile.js"></script>
+
 </html>
 
 <!--<h1>Your profile</h1>

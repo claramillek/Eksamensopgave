@@ -2,14 +2,19 @@
     <html>
         <head>
             <title>Sign up to match</title>
-            <link rel="stylesheet" type="text/css" href="css/index.css"> 
+            <link rel="stylesheet" href="./css/index.css" type="text/css"> 
             <meta charset="utf-8">
-            <script src="/controller/registerStorage.js" type= "text/javascript" defer></script>
+            <script src="../controller/registerStorage.js" type= "text/javascript" defer></script>
+            <script src="register.js" type= "text/javascript" defer></script>
+
         </head>
         <body>
             <div>
                 <img class="logo" src="logo.jpeg">
             </div>
+            <div id="create-user-msg-holder">
+                <p id="create-user-msg">Please fill in <span id="error-msg">all information below</span></p>
+              </div>
             <div class="user-div">
                 <h2>Sign up</h1>
                 <div>
@@ -38,7 +43,7 @@
                         <br><br>
                         <!--Indtastning af fødseldag-->
                         <label for="birthday">Enter your birthday:</label>
-                        <input id="birthday" type="date">
+                        <input id="birthday" type="date" required>
                         <br><br>
                         <!--valg af køn-->
                         <label for="gender">Gender:</label>
@@ -49,7 +54,10 @@
                         <input id="interest" type="text" placeholder="female, male, other..." required>
                         <br><br>
                     <input id="createUser" type="submit" value="Create user">
-                </div>
+                         <br>
+                    <input id="saveRegUser" type="submit" value="Save information">
+
+                 </div>
         </form>
                 <br>
                 <a href="/">Already have an account? Login here!</a>

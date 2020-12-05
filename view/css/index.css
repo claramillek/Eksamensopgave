@@ -60,7 +60,24 @@ h3 {
     color: #d60000;
     opacity: 0;
 }
+#create-user-msg-holder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
   
+#create-user-msg {
+    width: 23%;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #d60000;
+    opacity: 0;
+}
 #error-msg{
     display: block;
 

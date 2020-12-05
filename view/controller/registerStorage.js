@@ -2,6 +2,7 @@
 //Ved at lave binding kan jeg tilgå elementerne i HTML filen og tilføje funktionalitet til dem
 // Bruger querySelector. For at få fat i en 'class' bruger vi punktum, hvis vi skal have fat i id'erne kan vi bruge hashtag
 
+
 const firstnameInput = document.querySelector('#firstname');
 const lastnameInput = document.querySelector('#lastname');
 const emailInput = document.querySelector('#email');
@@ -11,7 +12,7 @@ const birthdayInput = document.querySelector('#birthday');
 const genderInput = document.querySelector('#gender');
 const interestInput = document.querySelector('#interest');
 
-const createUserBtn = document.querySelector('#createUser');
+const saveRegUserBtn = document.querySelector('#saveRegUser');
 
 let createUsers = []; //Ved at definere et createUser som array kan jeg gemme flere ting i localstorage - det gøres fordi der i setItem kun normal er en key og en value
 const createUser = function(ev){ //ev = event
@@ -36,5 +37,6 @@ const createUser = function(ev){ //ev = event
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-    createUserBtn.addEventListener('click', createUser);  
+    saveRegUserBtn.addEventListener('click', createUser);  
 });
+
