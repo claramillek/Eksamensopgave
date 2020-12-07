@@ -1,24 +1,76 @@
-//const { get } = require("http");
-const username = document.getElementById("username");
-const password = document.getElementById("password");
-const loginBtn = document.getElementById("submitUser");
-const loginErrorMsg = document.getElementById("login-error-msg");
+fetch("/model/users.json")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data[3].username)
+        //for (var i = 0; i < users.length; i++)
+    })
 
-loginBtn.addEventListener("click", function(e) {
-    e.preventDefault();
-    let username = usernameInput.value; //gjort for at give eksempel på når det fungerer
-    let password = passwordInput.value; //gjort for at give eksempel på når det fungerer
-    let storedUser = JSON.parse(localStorage.getItem("UsersList")); //skal jeg bruge JSON.parse her for at tage localstorage data og gøre det læseligt for javascript igen?
+let firstnames, lastnames, emails, usernames, passwords, birthdays, genders, interests;
+let userArray = {};
 
-    //for (i = 0; i < userArray.lenght; i++) { //userarray = JSON fil. jeg skal lave et for-loop med en if statement inden i - placering i array er i (index nummer)
-    if (username === storedUser[0].username && password === storedUser[0].password) { //se overstående kommentering
-    alert("You have successfully logged in.");
-    window.location.href = '/profile';
-    } else {
-    loginErrorMsg.style.opacity = 1;
-    }
+let showRegisteredUsers = function(){
+    for (let property in userArray){ //for-in loop
+        console.log(property);
+        console.log(userArray[property]);
+    };
+}
+
+fetch("/model/users.json")
+.then (function(res){
+    return res.json();
 })
-//var userArray = JSON.parse(data)
+.then(function(data){ //hernede tildeler jeg min variable noget data
+    //console.log(data);
+    firstnames = data.firstname; //ved at skrive data. værdien kan vi tilgå denne del af JSON filen
+    lastnames = data.lastname;
+    emails = data.email;
+    usernames = data.username;
+    passwords = data.password;
+    birthdays = data.birthday;
+    genders = data.gender;
+    interests = data.interest;
+    userArray = data;
+    showRegisteredUsers();
+});
+
+
+
+
+//læser data fra json filen og parser den således at den bliver til et js objekt jeg kan bruge:
+let existingUsers= fetch('/model/users.json', (err, jsonString) => {
+    if (err) {
+        console.log("Could not access or read from file:", err)
+        return
+    }
+    try {
+        const existingUsers = JSON.parse(jsonString)
+        console.log(existingUsers)
+} catch(err) {
+        console.log('Error parsing JSON string:', err)
+    }
+});
+
+//updateUser -> overskriver data.json filen med den nye bruger... 
+/*router.post("/register", (req,res) => {
+
+    let newUser=(
+        req.body.firstName,
+        req.body.lastname,
+        req.body.email,
+        req.body.username,
+        req.body.password,
+        req.body.birthday,
+        req.body.gender,
+        req.body.interest,
+        []
+    )
+    fs.writeFile('./users.json', JSON.stringify(newUser, null, 2), (err) => {
+        if (err) throw err;
+        console.log('user has been added to database');
+    });
+    }) 
+
+    //var userArray = JSON.parse(data)
    /*fetch("http://localhost:3400/hardCodeUser",{ //jeg skal fetche min data fra JSON og bruge den i for-loopet som userArray
     method: GET,
     Headers: {
@@ -47,15 +99,16 @@ loginBtn.addEventListener("click", function(e) {
 
 /*function login(){
   
-    var emailValue = document.getElementById("emailLogIn").value;
-    var passwordValue = document.getElementById("passwordLogIn").value;
+    var usernameInput = document.getElementById("username").value;
+    var passwordInput = document.getElementById("password").value;
   
     let logInData = {
       email: emailValue,
       password: passwordValue
     };
-    const usernameInput = document.getElementById('username').value; 
-    const passwordInput = document.getElementById('password').value; 
+
+    const username = usernameInput.value; 
+    const passwordInput = passwordInput.value; 
     let storedUser = {
         username: usernameInput,
         password: passwordInput

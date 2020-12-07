@@ -4,8 +4,10 @@
             <title>Sign up to match</title>
             <link rel="stylesheet" href="./css/index.css" type="text/css"> 
             <meta charset="utf-8">
-            <script src="../controller/registerStorage.js" type= "text/javascript" defer></script>
             <script src="register.js" type= "text/javascript" defer></script>
+           <script src="../routes.js"></script>
+          <!-- <script src="./controller/registerCon.js" type= "text/javascript" defer></script>-->
+
 
         </head>
         <body>
@@ -18,7 +20,7 @@
             <div class="user-div">
                 <h2>Sign up</h1>
                 <div>
-                    <form>
+                    <form id="reg-form">
                         <!--Brugeren skal skrive sit fornavn-->
                         <label for="firstname">Firstname:</label>
                         <input id="firstname" type="text" required> <!--type = text, i feltet kan man skrive tekst-->
@@ -34,11 +36,11 @@
                         <br><br>
                         <!--Vælg er brugernavn-->
                         <label for="username">Username:</label>
-                        <input id="username" type="text" required>
+                        <input id="regUsername" type="text" required>
                         <br><br>
                         <!--Lav et password-->
                         <label for="password">Password:</label>
-                        <input id="password" type="password" required> <!--når type sættes til password ved browseren, at
+                        <input id="regPassword" type="password" required> <!--når type sættes til password ved browseren, at
                         den skal skjule det man indtaster-->
                         <br><br>
                         <!--Indtastning af fødseldag-->
@@ -53,7 +55,7 @@
                         <label for="interest">Sexual orientation:</label>
                         <input id="interest" type="text" placeholder="female, male, other..." required>
                         <br><br>
-                    <input id="createUser" type="submit" value="Create user">
+                    <input id="createUser" type="submit" value="Create user" onclick="registerUser()">
                          <br>
                     <input id="saveRegUser" type="submit" value="Save information">
 

@@ -5,7 +5,6 @@
             <link rel="stylesheet" href="./css/index.css" type="text/css"> 
             <meta charset="utf-8">
             <script src="profile.js" defer></script>
-            <script src="../controller/profileStorage.js" defer></script>
         </head>
         <body>
             <div>
@@ -13,8 +12,8 @@
             </div>
             <h3>Welcome</h3>
             <form id="user" class="user">
-                <input id="logoutbtn" type="submit" onsubmit="logout()" value="Logout"> 
-                <input id="deleteUserbtn" type="submit" onsubmit="deleteUser()" value="Delete user"> 
+                <input id="logoutbtn" type="submit" value="Logout"> 
+                <input id="deleteBtn" type="submit" onsubmit="deleteUser()" value="Delete user"> 
             </form>
         </div>
         <p>All your matches:</p>
@@ -25,62 +24,59 @@
 
               </form>
          </div>
-         <div class="container">
-            <div class="header2">
+         <div>
+            <div>
             </div>
             <br>
             <form class="form" id="updateProfile">
                 <h2>Update your profile</h2>
-                <label for="">Username: </label> <br>
-                    <input type="text" name="name" id="newUsername" placeholder="Change username">
-            
-                    <br><br><br>
+                    <label for="">Firstname: </label> <br>
+                    <input type="text" name=firstname id="newFirstname" placeholder="Change your firstname">
+        
+                    <br><br>
+
+                    <label for="">Lastname: </label> <br>
+                    <input type="text" name="lastname" id="newLastname" placeholder="Change your lastname">
+        
+                    <br><br>
     
-                <label for="">Email: </label> <br>
+                    <label for="">Email: </label> <br>
                     <input type="email" name="email" id="newEmail" placeholder="Change email">
             
-                    <br><br><br>
-    
-                <label for="">Password:</label>
-                <br>
-                    <input type="password" name="password" id="newPassword" placeholder="Change password">
-           
-                    <br><br><br>
-    
-                <label for="">Change gender: </label> <br>
-                    <select name="gender" id="newGender" required>
-                        <option value="blank">  </option>
-                        <option value="female">Female</option>
-                        <option value="male">Male</option>
-                        <option value="other">Other</option>
-                    </select>
-    
-                    <br><br><br>
-    
-                <label for="">Update interest:</label> <br>
-                    <input type="radio" name="gender" value="Female" id="newInterest">
-                    <label for="female">Female</label>
-            
-                    <input type="radio" name="gender" value="Male" id="newInterest">
-                    <label for="female">Male</label>
-            
-                    <input type="radio" name="gender" value="Other" id="newInterest">
-                    <label for="female">Other</label>
-            
-                    <input type="radio" name="gender" value="All" id="newInterest">
-                    <label for="female">All</label>
-    
                     <br><br>
+
+                    <label for="">Username: </label> <br>
+                    <input type="text" name="username" id="newUsername" placeholder="Change your username">
+            
+                    <br><br>
+
+                    <label for="">Password:</label> <br>
+                    <input type="password" name="password" id="newPassword" placeholder="Change password">
+
+                    <br><br>
+    
+                    <label for="">Update interest:</label> <br>
+                        <input type="radio" name="interest" value="Female" id="newInterest">
+                        <label for="female">Female</label>
+            
+                        <input type="radio" name="interest" value="Male" id="newInterest">
+                        <label for="female">Male</label>
+            
+                        <input type="radio" name="interest" value="Other" id="newInterest">
+                        <label for="female">Other</label>
+            
+                        <input type="radio" name="interest" value="All" id="newInterest">
+                        <label for="female">All</label>
+
+                        <br><br>
                     <input id="updateUser" type="submit" value="Update your match profile">    
             </form>
     
         </div>
     
-        <div class ="container2">
+        <div>
             <h3>Other Users:</h3>
-            
           <form class="form2" id="otheruser">
-            <table id="potentialMatch"></table>
             <button id="likeOtherUserbtn" onclick=Like() type="button">Like</button>
             <button id="dislikeOtherUserbtn" onclick=Dislike() type="button">Dislike</button>
           </form>

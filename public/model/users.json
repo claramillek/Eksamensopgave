@@ -1,0 +1,102 @@
+ [
+     {
+        "firstname": "Peter",
+        "lastname": "Jakobsen",
+        "email": "p.jakobsen@gmail.com",
+        "username": "p.jako",
+        "password": "etPassword432",
+        "birthday": "1987-12-23",
+        "gender": "male",
+        "interest": "female"
+    },
+    {
+        "firstname": "Micheal",
+        "lastname": "Karlsson",
+        "email": "karlssonm@icloud.com",
+        "username": "m.karl",
+        "password": "1234trew",
+        "birthday": "1998-11-08",
+        "gender": "male",
+        "interest": "other"
+    },
+    {
+        "firstname": "Stephanie",
+        "lastname": "Mahone",
+        "email": "steph.mah@hotmail.com",
+        "username": "steph.fun143",
+        "password": "hejsa1234",
+        "birthday": "1992-09-22",
+        "gender": "other",
+        "interest": "other"
+    },
+    {
+        "firstname": "Ingelise",
+        "lastname": "Lindberg",
+        "email": "ingelise.l.g@gmail.com",
+        "username": "i.lisev",
+        "password": "qwnvmfkrj12y7",
+        "birthday": "1960-07-19",
+        "gender": "female",
+        "interest": "male"
+    },
+    {
+        "firstname": "Bent",
+        "lastname": "Hojborg",
+        "email": "bent@live.com",
+        "username": "bentH",
+        "password": "passwordformatch12",
+        "birthday": "1955-02-14",
+        "gender": "male",
+        "interest": "female"
+    },
+    {
+        "firstname": "Kristian",
+        "lastname": "Hilde",
+        "email": "kris.hilde@gmail.com",
+        "username": "kristianh",
+        "password": "paformatch",
+        "birthday": "1980-01-11",
+        "gender": "male",
+        "interest": "other"
+    },
+    {
+        "firstname": "Christiane",
+        "lastname": "Lidenholt",
+        "email": "christiane.l@icloud.com",
+        "username": "christianelidenholdt",
+        "password": "1a2b3c",
+        "birthday": "1995-06-27",
+        "gender": "female",
+        "interest": "male"
+    },
+    {
+        "firstname": "Anna",
+        "lastname": "Berg",
+        "email": "AnnaB@hotmail.com",
+        "username": "AnnaB",
+        "password": "secret123",
+        "birthday": "2000-09-21",
+        "gender": "female",
+        "interest": "male"
+    },
+    {
+        "firstname": "Nicole",
+        "lastname": "Soerensen",
+        "email": "n.s@live.com",
+        "username": "nicoles",
+        "password": "nicole31y",
+        "birthday": "1995-08-05",
+        "gender": "female",
+        "interest": "male"
+    },
+    {
+        "firstname": "Steen",
+        "lastname": "Nielsen",
+        "email": "steen_nielsen@hotmail.com",
+        "username": "steen123",
+        "password": "f%%ljh",
+        "birthday": "1980-04-08",
+        "gender": "male",
+        "interest": "female"
+    }
+]

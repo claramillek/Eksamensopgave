@@ -1,0 +1,74 @@
+//I denne fil er der localstorage funktionalitet samt login funktion.
+//Ved at lave binding kan jeg tilgå elementerne i HTML filen og tilføje funktionalitet til dem
+// Bruger document.getElementbyId til at få fat i elementerne i HTML filen. 
+//localstorage:
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+const subUserBtn = document.getElementById('saveUser');
+
+let users = [];
+const loginUser = function(ev){ //ev = event
+    ev.preventDefault(); //her overvrider vi submitknappens default funktion, hvilket betyder, at jeg nu kan bestemme dens funktionalitet. Den fortæller browseren, at den ikke skal submitte formen med det samme.
+    let user = {
+        username: usernameInput.value,
+        password: usernameInput.value
+    }
+    users.push(user); //tilføjer den indtastede bruger til det users array jeg har lavet længere oppe
+    document.getElementById('user-form').reset(); //her kaldes metoden 'reset' sådan at registrer formen "tømmes" og dermed reseter. Det medfører, at værdierne fra felterne forsvinder
+
+    console.warn('added', JSON.stringify(users)); //stringifyer min users, fordi localstorage kun kan læse/forstå strings
+
+    //gemmer til localstorage:
+    localStorage.setItem('UsersList', JSON.stringify(users));
+}
+document.addEventListener('DOMContentLoaded', function(){
+    subUserBtn.addEventListener('click', loginUser);  
+});
+
+
+//login funktion der burde gælde, for brugerne indstastet i JSON:
+
+const loginBtn = document.getElementById("submitUser");
+const loginErrorMsg = document.getElementById("login-error-msg");
+username = usernameInput
+password = passwordInput
+
+loginBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    //let username = usernameInput.value; //gjort for at give eksempel på når det fungerer
+    //let password = passwordInput.value; //gjort for at give eksempel på når det fungerer
+    //let storedUser = JSON.parse(localStorage.getItem("UsersList")); //skal jeg bruge JSON.parse her for at tage localstorage data og gøre det læseligt for javascript igen?
+    //let storedUser = JSON.parse("users.json")
+    fetch("/model/users.json")
+    .then(response => response.json())
+    .then(data => {
+        //reqUsername = (data[i].username)
+        //reqPassword = (data[i].password)
+        data.map(i => i.value)
+
+    for (var i = 0; i < data.length; i++) { //'data' er det data jeg trækker fra min JSON fil.
+    if (username === data.map(i=>i.username) && password === data.map(i=>i.password)) { //ift. data.map koden: https://stackoverflow.com/questions/34507674/javascript-get-value-from-an-object-inside-an-array/34507712
+    alert("You have successfully logged in.");
+    window.location.href = '/profile';
+    } else {
+    loginErrorMsg.style.opacity = 1;
+      }
+    }
+  })
+  })
+
+//Nedenstående er gjort, for at vise funktionaliteten, som var ment skulle gælde for overstående løsning.
+//I nedenstående eksempel bruges username og password der er gemt i localstorage til at give brugeren adgang til profil-siden
+  loginBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    let username = usernameInput.value; //gjort for at give eksempel på når det fungerer
+    let password = passwordInput.value; //gjort for at give eksempel på når det fungerer
+    let storedUser = JSON.parse(localStorage.getItem("UsersList"));
+
+    if (username === storedUser[0].username && password === storedUser[0].password) {
+    alert("You have successfully logged in.");
+    window.location.href = '/profile';
+    } else {
+    loginErrorMsg.style.opacity = 1;
+    }
+  })
