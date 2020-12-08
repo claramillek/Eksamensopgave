@@ -18,67 +18,68 @@
                 <input id="logoutbtn" type="submit" value="Logout"> 
                 <input id="deleteBtn" type="submit" onsubmit="deleteUser()" value="Delete user"> 
             </form>
-        </div>
-        <p>All your matches:</p>
-        <div>
+            <div>
+                <br>
+                <form class="form" id="updateProfile">
+                    <h2>Update your profile</h2>
+                        <label for="">Firstname: </label> <br>
+                        <input type="text" name=firstname id="newFirstname" placeholder="Change your firstname">
+            
+                        <br><br>
+    
+                        <label for="">Lastname: </label> <br>
+                        <input type="text" name="lastname" id="newLastname" placeholder="Change your lastname">
+            
+                        <br><br>
+        
+                        <label for="">Email: </label> <br>
+                        <input type="email" name="email" id="newEmail" placeholder="Change email">
+                
+                        <br><br>
+    
+                        <label for="">Username: </label> <br>
+                        <input type="text" name="username" id="newUsername" placeholder="Change your username">
+                
+                        <br><br>
+    
+                        <label for="">Password:</label> <br>
+                        <input type="password" name="password" id="newPassword" placeholder="Change password">
+    
+                        <br><br>
+        
+                        <label for="">Update interest:</label> <br>
+                            <input type="radio" name="interest" value="Female" id="newInterest">
+                            <label for="female">Female</label>
+                
+                            <input type="radio" name="interest" value="Male" id="newInterest">
+                            <label for="female">Male</label>
+                
+                            <input type="radio" name="interest" value="Other" id="newInterest">
+                            <label for="female">Other</label>
+                            <br><br>
+                        <input id="updateUser" type="submit" value="Update your match profile">    
+                </form>
+        
+            </div>
+            <br><br>
             <form id="matches">
-                <table id="matches"></table>
-                <input id="removeMatchbtn" type="submit" onsubmit="remove()" value="Remove Match"> 
-
+                <div id = allMatches>
+                    <h3>All your matches:</h3>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <table id="matches"></table>
+                    <input id="removeMatchbtn" type="submit" onsubmit="removeMatch()" value="Remove Match"> 
+                </div>
+                <br><br>
               </form>
          </div>
-         <div>
-            <div>
-            </div>
-            <br>
-            <form class="form" id="updateProfile">
-                <h2>Update your profile</h2>
-                    <label for="">Firstname: </label> <br>
-                    <input type="text" name=firstname id="newFirstname" placeholder="Change your firstname">
-        
-                    <br><br>
 
-                    <label for="">Lastname: </label> <br>
-                    <input type="text" name="lastname" id="newLastname" placeholder="Change your lastname">
-        
-                    <br><br>
-    
-                    <label for="">Email: </label> <br>
-                    <input type="email" name="email" id="newEmail" placeholder="Change email">
-            
-                    <br><br>
-
-                    <label for="">Username: </label> <br>
-                    <input type="text" name="username" id="newUsername" placeholder="Change your username">
-            
-                    <br><br>
-
-                    <label for="">Password:</label> <br>
-                    <input type="password" name="password" id="newPassword" placeholder="Change password">
-
-                    <br><br>
-    
-                    <label for="">Update interest:</label> <br>
-                        <input type="radio" name="interest" value="Female" id="newInterest">
-                        <label for="female">Female</label>
-            
-                        <input type="radio" name="interest" value="Male" id="newInterest">
-                        <label for="female">Male</label>
-            
-                        <input type="radio" name="interest" value="Other" id="newInterest">
-                        <label for="female">Other</label>
-            
-                        <input type="radio" name="interest" value="All" id="newInterest">
-                        <label for="female">All</label>
-
-                        <br><br>
-                    <input id="updateUser" type="submit" value="Update your match profile">    
-            </form>
-    
-        </div>
     
         <div>
-            <h3>Other Users:</h3>
+            <h3>Other users on match:</h3>
           <form class="form" id="likeOrDislike">
             <button id="likeOtherUserbtn" onclick=Like() type="button">Like</button>
             <button id="dislikeOtherUserbtn" onclick=Dislike() type="button">Dislike</button>

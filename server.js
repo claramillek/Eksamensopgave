@@ -5,18 +5,13 @@ const { response } = require('express');
 const express = require('express');
 const app = express();
 const fs = require('fs')
-//SKAL FJERNES: henter cors - cors sørger for at andre servere kan tilgå dataen... https://www.youtube.com/watch?v=zoSJ3bNGPp0
-const cors = require('cors')
-const fetch = require("node-fetch");
-const http = require('http');
-//const port = process.env.PORT || 3400;
-app.use(cors());
-
-//SKAL FJERNES: middleware : fs, body-parser - lader os tilgå JSON data https://www.youtube.com/watch?v=zoSJ3bNGPp0
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const profileController = require('./public/controller/profile');
+const registerController = require('./public/controller/register');
+const loginController = require('./public/controller/login')
 //ved at sige app.use og kalde metoden express.static får jeg fat i alle mine statiske filer (html, CSS og billeder) 
 app.use(express.static('public')); //jeg har lagt alle mine filer ind i view mappen - det gør, så alle min js, html og css filer kan arbejde sammen
 app.use(express.json({ limit: '10mb' }));
@@ -49,7 +44,7 @@ app.use(express.json({ limit: '10mb' }));
             console.log('Data written to file');
         })
     });
-    
+
 //rute til profile side:
     app.get("/profile", function(req, res) {
         res.sendFile(__dirname +"/public/profile.html");

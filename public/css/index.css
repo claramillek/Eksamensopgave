@@ -90,5 +90,13 @@ h3 {
     width: 300px;
     margin:0 auto;
     background-color: #2eb9fab9;
-    float: right;
+}
+
+#allMatches{
+    border: 3px solid #f8f680;
+    border-radius: 75px;
+    padding: 40px;
+    width: 300px;
+    margin:0 auto;
+    background-color: #2eb9fab9;
 }

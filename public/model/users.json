@@ -7,7 +7,9 @@
         "password": "etPassword432",
         "birthday": "1987-12-23",
         "gender": "male",
-        "interest": "female"
+        "interest": "female",
+        "like": [],
+        "matches": []
     },
     {
         "firstname": "Micheal",
@@ -17,7 +19,9 @@
         "password": "1234trew",
         "birthday": "1998-11-08",
         "gender": "male",
-        "interest": "other"
+        "interest": "other",
+        "like": [],
+        "matches": []
     },
     {
         "firstname": "Stephanie",
@@ -27,7 +31,9 @@
         "password": "hejsa1234",
         "birthday": "1992-09-22",
         "gender": "other",
-        "interest": "other"
+        "interest": "other",
+        "like": [],
+        "matches": []
     },
     {
         "firstname": "Ingelise",
@@ -37,7 +43,9 @@
         "password": "qwnvmfkrj12y7",
         "birthday": "1960-07-19",
         "gender": "female",
-        "interest": "male"
+        "interest": "male",
+        "like": [],
+        "matches": []
     },
     {
         "firstname": "Bent",
@@ -47,7 +55,9 @@
         "password": "passwordformatch12",
         "birthday": "1955-02-14",
         "gender": "male",
-        "interest": "female"
+        "interest": "female",
+        "like": [],
+        "matches": []
     },
     {
         "firstname": "Kristian",
@@ -57,7 +67,9 @@
         "password": "paformatch",
         "birthday": "1980-01-11",
         "gender": "male",
-        "interest": "other"
+        "interest": "other",
+        "like": [],
+        "matches": []
     },
     {
         "firstname": "Christiane",
@@ -67,7 +79,9 @@
         "password": "1a2b3c",
         "birthday": "1995-06-27",
         "gender": "female",
-        "interest": "male"
+        "interest": "male",
+        "like": [],
+        "matches": []
     },
     {
         "firstname": "Anna",
@@ -77,7 +91,9 @@
         "password": "secret123",
         "birthday": "2000-09-21",
         "gender": "female",
-        "interest": "male"
+        "interest": "male",
+        "like": [],
+        "matches": []
     },
     {
         "firstname": "Nicole",
@@ -87,7 +103,9 @@
         "password": "nicole31y",
         "birthday": "1995-08-05",
         "gender": "female",
-        "interest": "male"
+        "interest": "male",
+        "like": [],
+        "matches": []
     },
     {
         "firstname": "Steen",
@@ -97,6 +115,8 @@
         "password": "f%%ljh",
         "birthday": "1980-04-08",
         "gender": "male",
-        "interest": "female"
+        "interest": "female",
+        "like": [],
+        "matches": []
     }
 ]

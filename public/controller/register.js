@@ -1,29 +1,6 @@
 //Forbinder til JSON filen
 fetch("/model/users.json")
 
-
-let users = [
-    {
-    firstname: "Peter",
-    lastname: "Jakobsen",
-    email: "p.jakobsen@gmail.com",
-    username: "p.jako",
-    password: "etPassword432",
-    birthday: "12-23-1987",
-    gender: "male",
-    interest: "female"
-    },
-    {
-    firstname: "Nicole",
-    lastname: "Soerensen",
-    email: "n.s@live.com",
-    username: "nicoles",
-    password: "nicole31y",
-    birthday: "08-05-1995",
-    gender: "female",
-    interest: "male"
-    }
-]
 //register functionality:
 function registerUser(){
     let newFirstname = document.getElementById('firstname').value;
@@ -64,8 +41,8 @@ const interestInput = document.getElementById('interest');
 const saveRegUserBtn = document.getElementById('saveRegUser');
 
 let createUsers = []; //Ved at definere et createUser som array kan jeg gemme flere ting i localstorage - det gøres fordi der i setItem kun normal er en key og en value
-const createUser = function(ev){ //ev = event
-    ev.preventDefault(); //her overvrider vi submitknappens default funktion, hvilket mulliggøre, at vi nu kan bestemme dens funktionalitet. Fortæller browseren, at den ikke skal submitte formen med det samme.
+const createUser = function(e){ //ev = event
+    e.preventDefault(); //her overvrider vi submitknappens default funktion, hvilket mulliggøre, at vi nu kan bestemme dens funktionalitet. Fortæller browseren, at den ikke skal submitte formen med det samme.
     let newUser = {
         firstname: firstnameInput.value,
         lastname: lastnameInput.value,
@@ -88,30 +65,3 @@ const createUser = function(ev){ //ev = event
 document.addEventListener("DOMContentLoaded", function(){
     saveRegUserBtn.addEventListener("click", createUser);  
 });
-
-// når der trykkes på "save information" knappen på siden bliver informationen gemt
-/*createBtn.addEventListener("click", function register() { 
-    e.preventDefault();
-
-    let firstname = firstnameInput.value
-    let lastname = lastnameInput.value
-    let email = emailInput.value
-    let username = usernameInput.value;
-    let password = passwordInput.value; 
-    let birthday = birthdayInput.value
-
- 
-})
-    //Når en ny bruger registrerer sig vil vi gerne gemme brugerens informationer i "databasen", som i dette tilfælde er JSON.filen
-    //let storedRegUser = JSON.parse(localStorage.getItem("createUsersList")); 
-
-
-    //const gender = genderInput.value
-    //const interest = interest.value
-    /*if (firstname === storedRegUser[0].firstname && lastname === storedRegUser[0].lastname && email === storedRegUser[0].email && username === storedRegUser[0].username && password === storedRegUser[0].password && birthday === storedRegUser[0].birthday) { //se overstående kommentering
-        alert("You are now registered and ready to use Match!");
-        window.location.href = '/profile';
-        } else {
-        createErrorMsg.style.opacity = 1;
-        }
-    })*/

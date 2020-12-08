@@ -7,8 +7,8 @@ const passwordInput = document.getElementById('password');
 const subUserBtn = document.getElementById('saveUser');
 
 let users = [];
-const saveUserLogin = function(ev){ //ev = event
-    ev.preventDefault(); //her overvrider vi submitknappens default funktion, hvilket betyder, at jeg nu kan bestemme dens funktionalitet. Den fortæller browseren, at den ikke skal submitte formen med det samme.
+const saveUserLogin = function(e){ //e = event
+    e.preventDefault(); //her overvrider vi submitknappens default funktion, hvilket betyder, at jeg nu kan bestemme dens funktionalitet. Den fortæller browseren, at den ikke skal submitte formen med det samme.
     let user = {
         username: usernameInput.value,
         password: passwordInput.value
@@ -56,8 +56,8 @@ loginBtn.addEventListener("click", function(e) {
 
 //Nedenstående er gjort, for at vise funktionaliteten, som var ment skulle gælde for overstående løsning.
 //I nedenstående eksempel bruges username og password der er gemt i localstorage til at give brugeren adgang til profil-siden
-  const loginUser = function(ev){ //ev = event
-  ev.preventDefault();  
+  const loginUser = function(e){ //ev = event
+  e.preventDefault();  
 //loginBtn.addEventListener("click", function(e) {
     //e.preventDefault();
     let username = usernameInput.value; //gjort for at give eksempel på når det fungerer
