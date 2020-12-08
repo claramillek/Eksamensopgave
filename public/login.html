@@ -4,8 +4,10 @@
             <title>Login to match</title>
             <link rel="stylesheet" href="./css/index.css" type="text/css" > 
             <meta charset="utf-8">
-            <script src="./login.js" type="text/javascript" defer></script>
-            <script src="../routes.js"></script>
+            <script src="./controller/login.js" type="text/javascript" defer></script>
+            <script src="./model/routes.js"></script>
+           <!-- <script src = "./node_modules/clientside-require/dist/bundle.js"></script>-->
+
         </head>
         <body>
             <div>
@@ -15,7 +17,7 @@
                 <p id="login-error-msg">Wrong username or password. <span id="error-msg">Please try again</span></p>
               </div>
            <div class="user-div">
-                <form id="user-form"> 
+                <form id="login-form"> 
                     <h2>Login</h2>
                     <div>
                         <label for="username">Username:</label>

@@ -4,7 +4,10 @@
             <title>Welcome to your personal Match profile</title>
             <link rel="stylesheet" href="./css/index.css" type="text/css"> 
             <meta charset="utf-8">
-            <script src="profile.js" defer></script>
+            <script src="./controller/profile.js" defer></script>
+            <script src="./model/routes.js"></script>
+           <!-- <script src = "./node_modules/clientside-require/dist/bundle.js"></script>-->
+
         </head>
         <body>
             <div>
@@ -76,7 +79,7 @@
     
         <div>
             <h3>Other Users:</h3>
-          <form class="form2" id="otheruser">
+          <form class="form" id="likeOrDislike">
             <button id="likeOtherUserbtn" onclick=Like() type="button">Like</button>
             <button id="dislikeOtherUserbtn" onclick=Dislike() type="button">Dislike</button>
           </form>

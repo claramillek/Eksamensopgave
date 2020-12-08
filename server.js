@@ -27,33 +27,6 @@ app.use(express.json({ limit: '10mb' }));
             res.sendFile(__dirname + "/public/login.html");
     })
 
-
-    /*let userData = JSON.parse(fs.readFileSync('./view/model/users.json'))
-    
-    //Sørger for at username er unikt ved at tjekke med User.json
-    for (var i = 0; i < userData.length; i++){
-        if (userData[i].usernameValue == req.body.usernameValue){
-            res.json('failure')
-        }
-        userData.push(req.body)
-        res.json(userData)
-    }
-
-    fs.writeFile('./view/model/users.json', JSON.stringify(userData, null, 4), function(err) {
-        if (err) throw err;
-        console.log('Data written to file');
-    })*/
-
-//});
-/*fetch('localehost:3400/view/model/users.json').then(function(response) { //fetch metoden er god til JSON da den både forstår, læser og omdanner JSON så det passer til javascript
-    //console.log(res);
-    return response.json(); //omdanner "body" af JSON til javascript
-}).then(function(obj){
-    console.log(obj);
-}). catch(function(error){
-    console.error("Error");
-    console.error(error);
-})*/
 //rute til register side:
     app.get("/register", function(req, res) {
         res.sendFile(__dirname  + "/public/register.html");
@@ -76,116 +49,13 @@ app.use(express.json({ limit: '10mb' }));
             console.log('Data written to file');
         })
     });
+    
 //rute til profile side:
     app.get("/profile", function(req, res) {
         res.sendFile(__dirname +"/public/profile.html");
-    })
-app.listen(3400)
+    });
+app.listen(3400);
 
-/*let obj = {
-    table: []
-};
-//let jsonFile = require("jsonfile");
-const { dirname } = require("path");
-for (i = 0; i < obj.length; i++){
-    fs.writeFile(__dirname+"view/users.json", "firstname: " + i + "lastname: " +j);
-}
-
-let json = JSON.stringify(obj);
-fs.writeFile('users.json', json, "utf-8", function readFileCallback(err,data){
-   if (err){
-       console.log(err);
-   } else {
-       obj = JSON.parse("users.json"); //laver det til et objekt
-       obj.table.push({
-        firstname: "clara",
-        lastname: "kaloe"
-       });
-       json = JSON.stringify(obj); //laver det om til JSON igen
-       fs.writeFile("users.json", json, "utf-8")
-   }
-})*/
-
-
-// herunder vil jeg forsøge at connecte min server med min JSON fil, sådan at det der indtastes i serveren gemmes i json filen    
-//jeg skal parse OG stringify (når det sendes tilbage)
-//let data = fs.readFileSync('users.json');
-//let users = JSON.parse(data);
-
-
-
-//app.listen(3400)
+module.exports = app;
 //eksempel som philip skrev ind i Claras kode: let users = JSON.parse(fs.readFileSync("./model/data.json"))
 //res.status(200).json(users)
-
-//create 
-app.get("/create/:username", sendUser);
-function addUser(req,res){
-    var data=req.params;
-    var username=data.username
-    var newUsername=data.newUsername
-
-    users[username]=newUsername;
-    var data=JSON.stringify(users, null, 2);
-    fs.writeFile("data.json", users)
-}
-
-//login
-app.get("/user/:username", sendUser);
-function sendUser(req,res){
-    var data=req.params;
-    res.send(data.user);
-}
-
-app.post("/create"), (req, res)=>{
-  res
-}
-
-/*fetch('http://localhost:3400/view/model/users.json').then(function(response) { //fetch metoden er god til JSON da den både forstår, læser og omdanner JSON så det passer til javascript
-    //console.log(res);
-    return response.json(); //omdanner "body" af JSON til javascript
-}).then(function(obj){
-    console.log(obj);
-}). catch(function(error){
-    console.error("Error");
-    console.error(error);
-})*/
-
-/*fs.existsSync('users.json', function(exists) {
-
-    if (exists) {
-
-        console.log("yes file exists");
-
-        fs.readFile('users.json', function readFileCallback(err, data) {
-
-            if (err) {
-                console.log(err);
-            } else {
-                obj = JSON.parse(data);
-
-                for (i = 0; i < 5; i++) {
-                    obj.table.push({
-                        firstname: i,
-                        lastname: j
-                    });
-                }
-
-                let json = JSON.stringify(obj);
-                fs.writeFile('users.json', json);
-            }
-        });
-    } else {
-
-        console.log("file not exists");
-
-        for (i = 0; i < 5; i++) {
-            obj.table.push({
-                firstname: i,
-                lastname: j
-            });
-        }
-
-     
-    }
-});*/
