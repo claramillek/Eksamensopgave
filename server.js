@@ -26,6 +26,7 @@ app.use(express.json({ limit: '10mb' }));
     app.get("/register", function(req, res) {
         res.sendFile(__dirname  + "/public/register.html");
     })
+/*  Forsøg på at gemme data for dem der registrerer sig:  
     app.post('/register', (req, res) => {
 
         let createUser = JSON.parse(fs.readFileSync('public/model/users.json'))
@@ -44,7 +45,7 @@ app.use(express.json({ limit: '10mb' }));
             console.log('Data written to file');
         })
     });
-
+*/
 //rute til profile side:
     app.get("/profile", function(req, res) {
         res.sendFile(__dirname +"/public/profile.html");
@@ -52,5 +53,4 @@ app.use(express.json({ limit: '10mb' }));
 app.listen(3400);
 
 module.exports = app;
-//eksempel som philip skrev ind i Claras kode: let users = JSON.parse(fs.readFileSync("./model/data.json"))
-//res.status(200).json(users)
+

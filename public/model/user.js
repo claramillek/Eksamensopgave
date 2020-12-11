@@ -1,5 +1,5 @@
 class User{
-    constructor(firstname, lastname, email, username, password, birthday, gender, interests){
+    constructor(firstname, lastname, email, username, password, birthday, gender, interests, like, matches){
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
@@ -8,6 +8,8 @@ class User{
         this.birthday = birthday;
         this.gender = gender;
         this.interests = interests;
+        this.like = like;
+        this.matches = matches;
     }
 };
 

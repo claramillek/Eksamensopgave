@@ -3,7 +3,7 @@
 const { json } = require("body-parser");
 
     //Logout of account:
-const logoutBtn = document.getElementById('#logoutbtn');
+//const logoutBtn = document.getElementById('#logoutbtn');
 
 function logout() {
     logoutBtn.addEventListener('click', function(e){
@@ -17,13 +17,12 @@ function logout() {
 const deleteBtn = document.getElementById('deleteBtn');
 function deleteUser() {
     deleteBtn.addEventListener('click', function(e){   
-        const deleteuser = localstorage.removeItem('UsersList'); 
-//Da funktionaliteten i login siden er, at en bruger kun kan logge ind via. informationer i localstorage passer denne løsning på "delete user" til loginfunktionaliteten
+        let data = localstorage.getItem('UsersList');
+        let deleteAccount = localstorage.removeItem(data[i].username + data[i].password); 
     }) //Hvis brugeren skulle fjernes fra JSON filen kunne jeg have brugt splice, der gør det muligt at vælge et element i et array, og fjerne det.
         alert("Your user has been deleted")
         window.location.href = "/login.js"
     }
-
 
     //Update profile - her require jeg functionen updateUser, som jeg har lavet i routes.js - binder JSON og de indtastede informationer i UPDATE USER formularen sammen
 let updatedUser = require(updateUser());
@@ -33,13 +32,12 @@ fs.writeFile('/model/users.json', JSON.stringify(updatedUser, null, 2), (err) =>
 }); JSON.push(updatedUser) //forsøg på at pushe opdaterede bruger til JSON filen
 
     // Like:
-
 function like() {
     let likebtn = document.getElementById('likeOtherUserbtn');    
     likebtn.addEventListener('click', function(e) {
         e.preventDefault()
         let user = fetch("/model/users.json")
-            .then(user[i].likes.push(req.body[i])) //req.body er den "likede" bruger
+            .then(user[i].like.push(req.body)) //req.body er den "likede" bruger
             .then(JSON.stringify(user, null, 2), (err) => {
                 if (err) throw err;
                 console.log('Adding the liked profile to your array of likes')
@@ -53,7 +51,10 @@ function dislike() {
     let dislikeBtn = document.getElementById('dislikeOtherUserbtn');    
     dislikeBtn.addEventListener('click', function(e) {
     let data = fetch("/model/users.json")
-    //ikke færdiggjort. Ideen var at vise en ny bruger, hvis der blev trykket på dislike knappen
+        .then(response => response.json())
+        .then(data => {
+        console.log(data[3].user) //her er intentionen at få fat i én af personerne fra min JSON fil.
+    }) //ikke færdiggjort. Ideen var at vise en ny bruger, hvis der blev trykket på dislike knappen
     })
 }
 
@@ -66,7 +67,7 @@ function match(){
         } else {
                 like(); /*her definere jeg, at hvis brugeren har liket en anden bruger, men den anden bruger ikke har liket 
                     dem endnu, så tilføjes den likede profil blot til data[i] brugerens like array, ved at kalde overstående like funktion */
-        }
+       }
     }
 }
     // Remove match:
@@ -75,10 +76,10 @@ function removeMatch(){
     removeBtn.addEventListener('click', function(e) {
         e.preventDefault()
         let data = fetch("/model/users.json")
-        delete data.matches[i] //i er ukendt, men betegner index nummeret i match arrayet, som det match der skal fjernes har. 
+        delete data[i].matches[j]
+        //en anden mulig løsning er at bruge splice() og skrive den specifikke user ind i filter funktionen, dermed fjernes den også.
     })
 }; res.json({ "message" : "Match has been deleted"});
-    //algoritme? :https://evdokimovm.github.io/javascript/nodejs/2016/11/11/write-data-to-local-json-file-using-nodejs.html
 
     //List of all matches:
 function allMatches(){

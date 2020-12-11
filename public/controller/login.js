@@ -23,7 +23,7 @@ const saveUserLogin = function(e){ //e = event
 }
 document.addEventListener('DOMContentLoaded', function(){
     subUserBtn.addEventListener('click', saveUserLogin);  
-}); module.exports = saveUserLogin;
+}); 
 
 
 //login funktion der burde gælde, for brugerne indstastet i JSON:
@@ -44,7 +44,7 @@ loginBtn.addEventListener("click", function(e) {
         //data.map(i => i.value)
 
     for (var i = 0; i < data.length; i++) { //'data' er det data jeg trækker fra min JSON fil.
-    if (username === data.map(i=>i.username) && password === data.map(i=>i.password)) { //ift. data.map koden: https://stackoverflow.com/questions/34507674/javascript-get-value-from-an-object-inside-an-array/34507712
+    if (username === data.map(i,i.username) && password === data.map(i,i.password)) { 
     alert("You have successfully logged in.");
     window.location.href = '/profile';
     } else {
@@ -56,13 +56,11 @@ loginBtn.addEventListener("click", function(e) {
 
 //Nedenstående er gjort, for at vise funktionaliteten, som var ment skulle gælde for overstående løsning.
 //I nedenstående eksempel bruges username og password der er gemt i localstorage til at give brugeren adgang til profil-siden
-  const loginUser = function(e){ //ev = event
+  const loginUser = function(e){ 
   e.preventDefault();  
-//loginBtn.addEventListener("click", function(e) {
-    //e.preventDefault();
-    let username = usernameInput.value; //gjort for at give eksempel på når det fungerer
-    let password = passwordInput.value; //gjort for at give eksempel på når det fungerer
-    let storedUser = JSON.parse(localStorage.getItem("UsersList")); //bruger getItem til at få informationer fra et element i UsersList
+    let username = usernameInput.value; 
+    let password = passwordInput.value; 
+    let storedUser = JSON.parse(localStorage.getItem("UsersList")); 
 
     if (username === storedUser[0].username && password === storedUser[0].password) {
     alert("You have successfully logged in.");

@@ -1,3 +1,5 @@
+const app = require("../../server");
+
 fetch("/model/users.json")
     .then(response => response.json())
     .then(data => {
@@ -9,7 +11,6 @@ let userArray = {};
 
 let showRegisteredUsers = function(){
     for (let property in userArray){ //for-in loop
-        console.log(property);
         console.log(userArray[property]);
     };
 }
@@ -34,26 +35,26 @@ function updateUser() {
     updateUserBtn.addEventListener('click', function (e){
 //I nedenstående bruger jeg GET request til at få dataen fra 'Updater bruger' formularen på Profilsiden:
 // forskel på router og app: https://stackoverflow.com/questions/28305120/differences-between-express-router-and-app-get
-        router.get("/:firstname", (req, res)=>{
-           put.JSON(json.stringify("firstname")) //ved at bruge 'put' tilføjer jeg de opdaterede informationer til min json fil
+        app.get("/:firstname", (req, res)=>{
+           put.JSON(json.stringify("firstname", null, 2)) //ved at bruge 'put' tilføjer jeg de opdaterede informationer til min json fil
             }), 
 
-        router.get("/:lastname", (req, res)=>{
-            put.JSON(json.stringify("lastname"))
+        app.get("/:lastname", (req, res)=>{
+            put.JSON(json.stringify("lastname", null, 2))
             }),
 
-        router.get("/:email", (req, res)=>{
-           put.JSON(json.stringify("email"))
+        app.get("/:email", (req, res)=>{
+           put.JSON(json.stringify("email", null, 2))
             }),
 
-        router.get("/:username", (req, res)=>{
-            put.JSON(json.stringify("username"))
+        app.get("/:username", (req, res)=>{
+            put.JSON(json.stringify("username", null, 2))
             }),
-        router.get("/:password", (req, res)=>{
-            put.JSON(json.stringify("password"))
+        app.get("/:password", (req, res)=>{
+            put.JSON(json.stringify("password", null, 2))
         }),
-        router.get("/:interest", (req, res)=>{
-            put.JSON(json.stringify("interest"))
+        app.get("/:interest", (req, res)=>{
+            put.JSON(json.stringify("interest", null, 2))
         })   
     })
 }
@@ -73,7 +74,7 @@ fs.writeFile('users.json', json, "utf-8", function readFile(err,data){
    if (err){
        console.log(err);
    } else {
-       data = JSON.parse("users.json"); //laver det til et objekt
+       data = JSON.parse("users.json");
        data.users.push({ //jeg tilføjer (pusher) objektet til data variablen, som er et user array.
         firstname: "data.[i].firstname", //her tilføjer jeg firstname til JSON array'et
         lastname: "data[i].lastname" //her tilføjer jeg lastname til JSON array'et
